@@ -34,5 +34,20 @@ python demo.py ctdet --demo ../images/image_000052_png.rf.f074c175cf89e533fa8910
 
 If set up correctly, the output with the above command should look like this :
 
-![alt text](readme/image_test1.png)
-<p align="center">  <img src='readme/image_test1.png' align="center" height="200px"> </p>
+<p align="center">  <img src='readme/image_test1.png' align="center" height="300px"> </p>
+
+Add --debug 2 to the previous command to visualize the heatmap output.
+
+~~~
+python demo.py ctdet --demo ../images/image_000052_png.rf.f074c175cf89e533fa8910d11e461de8.jpg --load_model ../models/model_best_final.pth --debug 2
+~~~
+
+Output should look like this :
+<p align="center">  <img src='readme/image_test2.png' align="center" height="300px"> <img src='readme/image_test_heatmap2.png' align="center" height="300px"></p>
+
+If you want to have the coordinates (x,y) of the instruments centers add --debug 5 and the coordinates will be written in coordinates.txt
+
+~~~
+python demo.py ctdet --demo ../images/image_000052_png.rf.f074c175cf89e533fa8910d11e461de8.jpg --load_model ../models/model_best_final.pth --debug 5
+
+~~~

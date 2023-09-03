@@ -21,7 +21,7 @@ Everything was carried out on Ubuntu 18.04, with Anconda (or Miniconda). You'll 
    ~~~
    Open `miniconda3/envs/CenterNet/lib/python3.6/sites-packages/torch/nn/functional.py` or `Anaconda3/envs/CenterNet/lib/python3.6/sites-packages/torch/nn/functional.py` (if you are using Anaconda).
    Find the line with `torch.batch_norm` and replace the `torch.backends.cudnn.enabled` with `False`.
-   ![alt text](readme/Torch.batch.png)
+   ![alt text](Torch.batch.png)
 
 3. Install Cython:
    ~~~

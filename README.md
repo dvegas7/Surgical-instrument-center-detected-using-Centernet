@@ -12,4 +12,3 @@ If you are interested in the original repository or wish to contribute to it, pl
 ## Installation
 All the installation instructions can be found in [INSTALLATION.md](INSTALLATION.md) 
 
-## JULIE

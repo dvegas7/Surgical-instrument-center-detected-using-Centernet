@@ -45,9 +45,11 @@ python demo.py ctdet --demo ../images/seq_3_frame125_png.rf.ae87a673adee9ea26a00
 Output should look like this :
 <p align="center">  <img src='readme/image_test2.png' align="center" height="300px"> <img src='readme/image_test_heatmap2.png' align="center" height="300px"></p>
 
-If you want to have the coordinates (x,y) of the instruments centers add --debug 5 and the coordinates will be written in coordinates.txt
+If you want to have the coordinates (x,y) of the instruments centers add --debug 5 and the coordinates will be written in `CenterNet_ROOT/src/coordinates.txt`
 
 ~~~
 python demo.py ctdet --demo ../images/seq_3_frame125_png.rf.ae87a673adee9ea26a00bce4acf317be.jpg --load_model ../models/model_best_final.pth --debug 5
 
 ~~~
+## Training on your own dataset
+If you want to use your own dataset to train CenterNet you can. All the details are in [TRAIN.md](readme/TRAIN.md)

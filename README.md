@@ -5,4 +5,4 @@ Detection of instrument centers using CenterNet:
 
 
 # Installation
-All the installation instructions can be found in [installation.md](installation.md) 
+All the installation instructions can be found in [INSTALLATION.md](INSTALLATION.md) 

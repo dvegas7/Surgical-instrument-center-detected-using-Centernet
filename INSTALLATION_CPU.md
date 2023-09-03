@@ -1,6 +1,4 @@
-# Installation
-
-Everything was carried out on Ubuntu 18.04, with Anconda (or Miniconda). You'll need a Nvidia GPU with CUDA 10.0 or 11.0 (tested on 10.0). The use of a GPU is highly recommended, especially for training. If you still want to use your CPU, please refer to [INSTALLATION_CPU.md](INSTLATTION_CPU.md)
+# Installation on CPU
 
 0. Prerequisite installations
    ~~~
@@ -46,9 +44,31 @@ Everything was carried out on Ubuntu 18.04, with Anconda (or Miniconda). You'll 
    pip install -r requirements.txt
    pip3 install opencv-python==3.4.13.47
    ~~~
-7. Compile deformable convolutional (from [DCNv2](https://github.com/CharlesShang/DCNv2)).
+7. Remove everything related to CUDA:
+   
+   Open `$CenterNet_ROOT/src/lib/detectors`
+
+   In `base_detector.py`replace:
+   ~~~
+   def __init__(self, opt):
+    if opt.gpus[0] >= 0:
+      opt.device = torch.device('cuda')
+    else:
+      opt.device = torch.device('cpu')
+   ~~~
+   By
+   ~~~
+     def __init__(self, opt):
+        opt.device = torch.device('cpu')
+   ~~~
+   Delete all the lines about CUDA Synchronisation in`base_detector.py`, `ctdet.py`, `ddd.py`, `detector_factory.py`, `exdet.py`and `multi_pose.py`.
+   ~~~
+   torch.cuda.synchronize()
+   ~~~
+   I may have forgotten some files, but in any case you need to delete these lines from the other files to be able to run CenterNet with the CPU.
+9. Compile deformable convolutional (from [DCNv2](https://github.com/CharlesShang/DCNv2)).
    ~~~
    cd $CenterNet_ROOT/src/lib/models/networks/DCNv2
    ./make.sh
    ~~~
-8. Download pretrained models for detection move them to `$CenterNet_ROOT/models/`. 
+10. Download pretrained models for detection move them to `$CenterNet_ROOT/models/`. 

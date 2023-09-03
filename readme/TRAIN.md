@@ -11,7 +11,7 @@
      Once you have generated your data in the COCO format go to `CenterNet_ROOT/data/instrument/annotations` and place your 3 coco.
      json files, namely `train`, `val` and `test`. 
      
-     <p align="center">  <img src='cocojson.png' align="center" height="200px"> </p>
+     <p align="center">  <img src='cocojson.png' align="center" height="400px"> </p>
      
      Next go to `CenterNet_ROOT/data/instrument/image` and put all your images. 
 
@@ -30,3 +30,33 @@
     ~~~
 
 <p align="center">  <img src='moy_std2.png' align="center" height="80px"> </p>
+
+3. Go to `CenterNet_ROOT/src/lib/opt.py`
+
+    Modify the default resolution that you chose, the mean and the variance. Put the rounded value obtained previously. 
+
+<p align="center">  <img src='ctdet_moy_std.png' align="center" height="60px"> </p>
+
+
+4. Training phase
+
+    In `CenterNet_ROOT/src` run :
+
+    ~~~
+    python main.py ctdet --exp_id coco_dla --batch_size 32 --master_batch 1 --lr 1.25e-4
+
+    ~~~
+    If there is an error such as insufficient video memory, you need to reduce the batch_size to 16 or 8.
+
+    If you have multiple number of GPU add `--gpus` following your number of gpus with coma. For example if you have 2 GPUS do :
+
+    ~~~
+    python main.py ctdet --exp_id coco_dla --batch_size 32 --master_batch 1 --lr 1.25e-4 --gpus 0,1
+
+    ~~~
+
+
+    If there is no accident, after the above steps, the training will start. 
+    Note that the default number of epochs is 140, but you can change this number directly in the `opt.py` file.
+
+    <p align="center">  <img src='training.png' align="center" height="400px"> </p>

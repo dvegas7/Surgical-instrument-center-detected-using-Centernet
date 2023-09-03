@@ -29,7 +29,7 @@ You can find example images in `CenterNet_ROOT/images/`
 Example:
 
 ~~~
-python demo.py ctdet --demo ../images/image_000052_png.rf.f074c175cf89e533fa8910d11e461de8.jpg --load_model ../models/model_best_final.pth
+python demo.py ctdet --demo ../images/image_000105_png.rf.78b086e2e0d28a1709905caa6be88a8e.jpg --load_model ../models/model_best_final.pth
 ~~~
 
 If set up correctly, the output with the above command should look like this :

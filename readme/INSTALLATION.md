@@ -36,10 +36,10 @@ Everything was carried out on Ubuntu 18.04, with Anconda (or Miniconda). You'll 
    make
    python setup.py install --user
    ~~~
-5. Install CenterNet-instrument:
+5. Install CenterNet for instrument:
    ~~~
    CenterNet_ROOT=/path/to/clone/CenterNet
-   git clone https://github.com/dvegas/CenterNet-instrument $CenterNet_ROOT
+   git clone https://github.com/dvegas7/Surgical-instrument-center-detected-using-Centernet-.git $CenterNet_ROOT
    ~~~
 6. Install requirements:
    ~~~

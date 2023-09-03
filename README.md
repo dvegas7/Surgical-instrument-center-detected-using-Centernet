@@ -1,4 +1,4 @@
-# CenterNet-instrument
+# Surgical instrument center detected using Centernet
 
 Detection of instrument centers using CenterNet: 
 ![alt text](readme/center.png)

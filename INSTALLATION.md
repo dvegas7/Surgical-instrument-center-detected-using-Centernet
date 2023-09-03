@@ -51,4 +51,4 @@ Everything was carried out on Ubuntu 18.04, with Anconda (or Miniconda). You'll 
    cd $CenterNet_ROOT/src/lib/models/networks/DCNv2
    ./make.sh
    ~~~
-   
+8. Download pretrained models for detection move them to `$CenterNet_ROOT/models/`. 

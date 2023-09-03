@@ -46,7 +46,7 @@ Everything was carried out on Ubuntu 18.04, with Anconda (or Miniconda). You'll 
    pip install -r requirements.txt
    pip3 install opencv-python==3.4.13.47
    ~~~
-7. Compile deformable convolutional (from [CNv2](https://github.com/CharlesShang/DCNv2)).
+7. Compile deformable convolutional (from [DCNv2](https://github.com/CharlesShang/DCNv2)).
    ~~~
    cd $CenterNet_ROOT/src/lib/models/networks/DCNv2
    ./make.sh

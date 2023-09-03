@@ -37,7 +37,7 @@
 5. Install CenterNetfor instrument:
    ~~~
    CenterNet_ROOT=/path/to/clone/CenterNet
-   git clone https://github.com/dvegas7/Surgical-instrument-center-detected-using-Centernet-.git$CenterNet_ROOT
+   git clone https://github.com/dvegas7/Surgical-instrument-center-detected-using-Centernet.git$CenterNet_ROOT
    ~~~
 6. Install requirements:
    ~~~

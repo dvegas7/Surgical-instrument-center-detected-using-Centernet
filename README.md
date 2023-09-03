@@ -12,3 +12,22 @@ If you are interested in the original repository or wish to contribute to it, pl
 ## Installation
 All the installation instructions can be found in [INSTALLATION.md](readme/INSTALLATION.md) 
 
+## Use CenterNet-instrument
+
+First, download the models and put them in `CenterNet_ROOT/models/`
+
+For object detection on images/ video, go to `CenterNet_ROOT/src/` and run :
+
+~~~
+python demo.py ctdet --demo /path/to/image/or/folder/or/video --load_model ../models/model_best_final.pth
+~~~
+
+You can find example images in `CenterNet_ROOT/images/`
+
+Example:
+
+~~~
+python demo.py ctdet --demo /path/to/image/or/folder/or/video --load_model ../models/model_best_final.pth
+~~~
+
+If set up correctly, the output with the above command should look like this :

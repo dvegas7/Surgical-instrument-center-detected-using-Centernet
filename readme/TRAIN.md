@@ -17,7 +17,7 @@
 
 2. Go to `CenterNet_ROOT/src/lib/datasets/dataset/instrument.py`
 
-    <p align="center">  <img src='instrumentpy.png' align="center" height="200px"> </p>
+    <p align="center">  <img src='instrumentpy.png' align="center" height="400px"> </p>
 
     You can chose the default resolution (300,300) or (512,512). Note that the 512 parameters will increase calculation time and 300 has a small amount of calculation time (I use 512).
 

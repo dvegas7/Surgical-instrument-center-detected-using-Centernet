@@ -35,3 +35,4 @@ python demo.py ctdet --demo ../images/image_000052_png.rf.f074c175cf89e533fa8910
 If set up correctly, the output with the above command should look like this :
 
 ![alt text](readme/image_test1.png)
+<p align="center">  <img src='readme/image_test1.png' align="center" height="200px"> </p>

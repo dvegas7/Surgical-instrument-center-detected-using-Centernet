@@ -39,7 +39,7 @@ If set up correctly, the output with the above command should look like this :
 Add --debug 2 to the previous command to visualize the heatmap output.
 
 ~~~
-python demo.py ctdet --demo ../images/image_000052_png.rf.f074c175cf89e533fa8910d11e461de8.jpg --load_model ../models/model_best_final.pth --debug 2
+python demo.py ctdet --demo ../images/seq_3_frame125_png.rf.ae87a673adee9ea26a00bce4acf317be.jpg --load_model ../models/model_best_final.pth --debug 2
 ~~~
 
 Output should look like this :
@@ -48,6 +48,6 @@ Output should look like this :
 If you want to have the coordinates (x,y) of the instruments centers add --debug 5 and the coordinates will be written in coordinates.txt
 
 ~~~
-python demo.py ctdet --demo ../images/image_000052_png.rf.f074c175cf89e533fa8910d11e461de8.jpg --load_model ../models/model_best_final.pth --debug 5
+python demo.py ctdet --demo ../images/seq_3_frame125_png.rf.ae87a673adee9ea26a00bce4acf317be.jpg --load_model ../models/model_best_final.pth --debug 5
 
 ~~~

@@ -1,5 +1,6 @@
 # Training on your own dataset
 
+## For a single instrument class 
 1. Prepare the dataset
 
     Data must be in COCO format, you can export directly in COCO format from roboflow or CVAT.
@@ -71,4 +72,6 @@
 
     ~~~
 
-    
+## For multiple classes 
+
+If you want to use CenterNet to detect several different classes of instruments or other objects, here's how to train a model with your own data 

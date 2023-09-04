@@ -29,7 +29,7 @@ You can find example images in `CenterNet_ROOT/images/`
 Example:
 
 ~~~
-python demo.py ctdet --demo ../images/image_000105_png.rf.78b086e2e0d28a1709905caa6be88a8e.jpg --load_model ../models/model_best_final.pth
+python demo.py ctdet --demo ../images/instrument1.jpg --load_model ../models/model_best_final.pth
 ~~~
 
 If set up correctly, the output with the above command should look like this :
@@ -39,7 +39,7 @@ If set up correctly, the output with the above command should look like this :
 Add --debug 2 to the previous command to visualize the heatmap output.
 
 ~~~
-python demo.py ctdet --demo ../images/seq_3_frame125_png.rf.ae87a673adee9ea26a00bce4acf317be.jpg --load_model ../models/model_best_final.pth --debug 2
+python demo.py ctdet --demo ../images/instrument2.jpg --load_model ../models/model_best_final.pth --debug 2
 ~~~
 
 Output should look like this :
@@ -48,7 +48,7 @@ Output should look like this :
 If you want to have the coordinates (x,y) of the instruments centers add --debug 5 and the coordinates will be written in `CenterNet_ROOT/src/coordinates.txt`
 
 ~~~
-python demo.py ctdet --demo ../images/seq_3_frame125_png.rf.ae87a673adee9ea26a00bce4acf317be.jpg --load_model ../models/model_best_final.pth --debug 5
+python demo.py ctdet --demo ../images/instrument2.jpg --load_model ../models/model_best_final.pth --debug 5
 
 ~~~
 ## Training on your own dataset

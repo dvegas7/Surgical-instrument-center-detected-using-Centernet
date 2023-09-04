@@ -1,13 +1,16 @@
 # Training on your own dataset
 
 ## For a single instrument class 
+
+If your dataset includes instruments and you have 1 class that you want to detect, the rest being background, here's how you should proceed. If your dataset contains several classes, please refer to multiple classes part. 
+
 1. Prepare the dataset
 
     Data must be in COCO format, you can export directly in COCO format from roboflow or CVAT.
     
      I recommend choosing a 512x512 image format.
 
-     If your dataset includes instruments and you have 1 class that you want to detect, the rest being background, here's how you should proceed. If your dataset contains several classes, please refer to part 2.
+     
 
      Once you have generated your data in the COCO format go to `CenterNet_ROOT/data/instrument/annotations` and place your 3 coco.
      json files, namely `train`, `val` and `test`. 

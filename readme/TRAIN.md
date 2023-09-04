@@ -2,11 +2,11 @@
 
 ## For a single instrument class 
 
-If your dataset includes instruments and you have 1 class that you want to detect, the rest being background, here's how you should proceed. If your dataset contains several classes, please refer to [multiple classes part](#for-multiple-classes)
+If your dataset includes instruments and you have 1 class that you want to detect, the rest being background, here's how you should proceed. If your dataset contains several classes, please refer to [multiple classes part](#for-multiple-classes). 
 
 1. Prepare the dataset
 
-    Data must be in COCO format, you can export directly in COCO format from roboflow or CVAT.
+    Data must be in COCO format and annotated with bouding boxes, you can export directly in COCO format from roboflow or CVAT.
     
      I recommend choosing a 512x512 image format.
 
@@ -77,4 +77,52 @@ If your dataset includes instruments and you have 1 class that you want to detec
 
 ## For multiple classes 
 
-If you want to use CenterNet to detect several different classes of instruments or other objects, here's how to train a model with your own data 
+If you want to use CenterNet to detect several different classes of instruments or other objects, here's how to train a model with your own data. Most of the steps are similar to the part for a single instrument class but it is a little longer.
+
+1. Prepare the dataset
+
+    Like for single class, data must be in COCO format and annotated with bouding boxes, you can export directly in COCO format from roboflow or CVAT.
+    
+     I recommend choosing a 512x512 image format.
+
+     Once you have generated your data in the COCO format go to `CenterNet_ROOT/data` create a new folder. The name is the name of your data set, as shown below in my case I will use the name `tools`
+
+      <p align="center">  <img src='tools.png' align="center" height="400px"> </p>
+
+    Then create two folders in this folder (`annotations` store the three json files we generated before; `images` store all pictures, including training test verification three, all) like in the first part:
+
+     <p align="center">  <img src='tools_folder.png' align="center" height="400px"> </p>
+
+2. Go to `CenterNet_ROOT/src/lib/datasets/dataset/` :
+
+    Copy and paste `coco.py` and rename it with your dataset name, in my case it will be `tools.py`. Open it.
+    <p align="center">  <img src='toolscopy.png' align="center" height="70px"> </p>
+
+    0. Change the COCO class to your own name
+    1. Change num_classes=80 in line 14 to your own category number (2 in my case)
+    2. Chose the default resolution (300,300) or (512,512), note that the 512 parameters will increase calculation time in comparison with the 300.
+    3. Next, change the mean and std to the mean and variance of your own image data set. Run `moy_std.py` in `CenterNet_ROOT/src/` It will calculate the mean and std of your data set. Just change the directory in the code to access the images of your dataset:
+
+    <p align="center">  <img src='tools_moy_std.png' align="center" height="60px"> </p>
+
+    4. Modify the data and image path, data_dir input is the name of the dataset folder we created before, img_dir input is the images image folder
+
+        If you set up correctly your `.py` should look like this :
+
+
+    <p align="center">  <img src='toolspy.png' align="center" height="200px"> </p>
+
+    5. Modify the json file path as follows:
+
+    <p align="center">  <img src='tools_json.png' align="center" height="160px"> </p>
+
+    In my case, `val.coco.json` and `train.coco.json` are the names of my annotation files in COCO format for validation and training annotations. Make sure you fill in the names you put in the annotation folder.
+
+    6. Change the category name and category id to yourself:
+    
+        Make sure you put one more ids than your number of classes + background in my case that makes 4. 
+
+    <p align="center">  <img src='tools_classesnames.png' align="center" height="60px"> </p>
+
+
+    

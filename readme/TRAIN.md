@@ -119,10 +119,15 @@ If you want to use CenterNet to detect several different classes of instruments 
     In my case, `val.coco.json` and `train.coco.json` are the names of my annotation files in COCO format for validation and training annotations. Make sure you fill in the names you put in the annotation folder.
 
     6. Change the category name and category id to yourself:
-    
+
         Make sure you put one more ids than your number of classes + background in my case that makes 4. 
 
     <p align="center">  <img src='tools_classesnames.png' align="center" height="60px"> </p>
 
+2. Go to `CenterNet_ROOT/src/lib/datasets/dataset_factory` :
+
+     Add your own dataset name in the dataset_facto dictionary (the format is 'the name of the Python file you created before': the name of your own dataset class, because you need to find your data class from the `py` file you created, name must correspond)
+
+      <p align="center">  <img src='tools_factory.png' align="center" height="200px"> </p>
 
     

@@ -2,7 +2,7 @@
 
 ## For a single instrument class 
 
-If your dataset includes instruments and you have 1 class that you want to detect, the rest being background, here's how you should proceed. If your dataset contains several classes, please refer to multiple classes part. 
+If your dataset includes instruments and you have 1 class that you want to detect, the rest being background, here's how you should proceed. If your dataset contains several classes, please refer to [multiple classes part](#for-multiple-classes)
 
 1. Prepare the dataset
 

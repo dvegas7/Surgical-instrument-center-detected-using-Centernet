@@ -8,7 +8,7 @@ This project is based on [CenterNet](https://github.com/xingyizhou/CenterNet) , 
 
 All credit for the original work and original contributions must be attributed to the original author. I claim no authority over the original repository, its goals, or its future versions.
 
-If you are interested in the original repository or wish to contribute to it, please refer to the original repository by following the link above.
+If you are interested in the original repository or wish to contribute to it, please refer to the link above.
 ## Installation
 All the installation instructions can be found in [INSTALLATION.md](readme/INSTALLATION.md) 
 

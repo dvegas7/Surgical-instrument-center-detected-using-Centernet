@@ -60,3 +60,15 @@
     Note that the default number of epochs is 140, but you can change this number directly in the `opt.py` file.
 
     <p align="center">  <img src='training.png' align="center" height="400px"> </p>
+
+    If you want to start from a pre-trained model and fine-tuned that model with the new images you can. Just add `--load_model /path/to/your/model`
+    
+    Example :
+
+    ~~~
+
+    python main.py ctdet --exp_id coco_dla --batch_size 32 --master_batch 1 --lr 1.25e-4 --load_model ../models/model_best_final.pth
+
+    ~~~
+
+    

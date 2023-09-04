@@ -16,7 +16,7 @@ If you are interested in the original repository or wish to contribute to it, pl
 
 The dataset with images and annotations I used for training and testing is available for download [here](https://drive.google.com/file/d/1rfeKxLpjwuKfrhos9av9BJ5fWVJuxxtC/view?usp=drive_link).
 
-All models and details are available in [model](readme/MODEL.md)
+All models and details are available in [model](readme/MODEL.md).
 
 ## Installation
 All the installation instructions can be found in [INSTALLATION.md](readme/INSTALLATION.md) 

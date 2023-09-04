@@ -12,7 +12,7 @@ If you are interested in the original repository or wish to contribute to it, pl
 
 ## Abstract 
 
-CenterNet is a one-step object detector that detects each object, including the center of its bounding boxes. To detect key points on surgical instruments for tracking purposes, I used CenterNet and trained it on my own data. Over 1,000 different instrument images were annotated on roboflow with bouding boxes, for a dataset comprising 2,600 training images, 250 validation images and 160 test images using various data augmentation methods. Training was carried out with a batch size of 8 and 140 epochs to obtain 3 models for instrument center detections. 
+[CenterNet](https://github.com/xingyizhou/CenterNet) is a one-step object detector that detects each object, including the center of its bounding boxes. To detect key points on surgical instruments for tracking purposes, I used CenterNet and trained it on my own data. Over 1,000 different instrument images were annotated on roboflow with bouding boxes, for a dataset comprising 2,600 training images, 250 validation images and 160 test images using various data augmentation methods. Training was carried out with a batch size of 8 and 140 epochs to obtain 3 models for instrument center detections. 
 
 ## Installation
 All the installation instructions can be found in [INSTALLATION.md](readme/INSTALLATION.md) 

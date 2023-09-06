@@ -173,6 +173,8 @@ Once you've finished training, go to `CenterNet_ROOT/exp/ctdet/coco_dla` several
 - the model for the epoch 90, `model_90.pth`
 - the model for the epoch 120, `model_120.pth`
 
+In the same file you can find a `logs` file, it contains `log.txt` which gives the values of the different losses during training, if you want to plot the result you can.  
+
 
 
 

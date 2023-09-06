@@ -25,7 +25,7 @@ All the installation instructions can be found in [INSTALLATION.md](readme/INSTA
 
 Images and videos are supported for demo. 
 
-First, download the models and put them in `CenterNet_ROOT/models/` (model_best_final by default)
+First, download the [models](readme/MODEL.md) and put them in `CenterNet_ROOT/models/` (model_best_final by default)
 
 For object detection on images/ video, go to `CenterNet_ROOT/src/` and run :
 

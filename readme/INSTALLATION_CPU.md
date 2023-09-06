@@ -71,4 +71,4 @@
    cd $CenterNet_ROOT/src/lib/models/networks/DCNv2
    ./make.sh
    ~~~
-10. Download pretrained models for detection move them to `$CenterNet_ROOT/models/`. 
+10. Download pretrained [models](MODEL.md) for detection move them to `$CenterNet_ROOT/models/`. 

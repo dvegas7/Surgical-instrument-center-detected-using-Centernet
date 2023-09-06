@@ -62,3 +62,7 @@ python demo.py ctdet --demo ../images/instrument2.jpg --load_model ../models/mod
 ~~~
 ## Training on your own dataset
 If you want to use your own dataset to train CenterNet you can. All the details are in [TRAIN.md](readme/TRAIN.md)
+
+## Testing on your own dataset
+
+Once you've completed training, you can test your model, all the details are in [TEST.md](readme/TEST.md)

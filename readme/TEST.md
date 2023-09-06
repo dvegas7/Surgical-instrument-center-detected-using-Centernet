@@ -10,5 +10,8 @@
     The function is to specify the label file as the test file test.coco.json created before.
 
 
+2. Go to `CenterNet_ROOT/src` and run `test.py`
+
+
 
 ## For multiple classes 

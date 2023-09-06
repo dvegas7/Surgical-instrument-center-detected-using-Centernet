@@ -166,6 +166,14 @@ python main.py ctdet --exp_id coco_dla --batch_size 32 --master_batch 1 --lr 1.2
 
 ~~~
 
+Once you've finished training, go to `CenterNet_ROOT/exp/ctdet/coco_dla` several models had to be downloaded, you should find :
+
+- The best model calculated with validation data , `model_best.pth` 
+- The latest model calculated with the latest epoch, `model_last.pth`
+- the model for the epoch 90, `model_90.pth`
+- the model for the epoch 120, `model_120.pth`
+
+
 
 
 

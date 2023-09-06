@@ -7,11 +7,11 @@
 
 ## Instrument detection
 
-| Model                    | GPUs | Epoch | Test time (ms) |   AP               |  Download | 
+| Model                    | GPUs | Epoch | Test time on CPU |   AP               |  Download | 
 |--------------------------|------|-------|----------------|--------------------|-----------|
-|model_best_final|1|45|----------------|73|-----------|
-|model_best_final2|1|55|----------------|70|-----------|
-|model_last|1|75|----------------|74|-----------|
+|model_1|1|45|7m 49s|73|[model](https://drive.google.com/file/d/1vFO-rkP_VungmU2A_mQ9oWsy0OncjK4m/view?usp=drive_link)|
+|model_2|1|55|7m 51s|70|[model](https://drive.google.com/file/d/1PydVi1IreS2AbU5uAIuzU9YY9avz7OfC/view?usp=drive_link)|
+|model_3|1|75|7m 24s|74|[model](https://drive.google.com/file/d/1h0Xpz3K3s1SFB4TrMfM6l3Hv5eM_DKVt/view?usp=drive_link)|
 
 
 

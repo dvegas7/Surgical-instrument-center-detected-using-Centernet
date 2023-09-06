@@ -176,7 +176,7 @@ Once you've finished training, go to `CenterNet_ROOT/exp/ctdet/coco_dla` several
 In the same file you can find a `logs` file, it contains `log.txt` which gives the values of the different losses during training, if you want to plot the result you can.  
 
 
-You can now test your model on the test data. All test details are [here](TEST.md)
+You can now test your model on the test data. All test details are in [TEST.md](TEST.md).
 
 
 

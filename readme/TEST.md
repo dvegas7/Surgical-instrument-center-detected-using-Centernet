@@ -93,7 +93,18 @@ Precision and Recall are fundamental metrics used to evaluate the performance of
 
 - False Negative `FN` : The number of time the model incorrectly predicted the positive input as negative. In our case false negative occurs when the model fails to detect an instrument that is actually present in the image.
 
-Now, let's discuss precision and recall:
+Note that here a detection made by the model is considered True Positive only if it satisfies the two conditions:
+
+- The confidence score of the predicted bounding box should be greater than the confidence threshold (which is 0.6 here), signifying that we have found the object for which we were looking.
+
+- The `IoU` between the predicted bounding box and the hand-labelled bounding box should be greater than the `IoU` threshold (which can take several different values ranging from 0.5 to 0.95).
+
+<p align="center">  <img src='TP.png' align="center" height="300px"> </p>
+
+Here's an example of a True positive, the `IOU` is above the treshold and the confidence level is higher than 0.6. 
+
+
+Now, let's discuss about precision and recall:
 
 1. Precision measures the accuracy of positive predictions made by a system. It's the ratio of true positive predictions to all positive predictions, showing how accurate the system's positive guesses are. The formula is :
 
@@ -106,4 +117,32 @@ $$ Precision = {TP \over TP + FP} $$
 2. Recall answers whether your model guessed every time that it should be guessing. The higher the recall, the more positive samples are detected. It is the ratio of true positive predictions to the total number of actual positive cases. Recall is crucial when it's essential to capture all relevant instances. The formula is :
 
 $$ Recall = {TP \over TP + FN} $$
+
+### Precision-Recall Curve and Average Precision
+
+From what we saw, we understand that a model with high precision and recall correctly identifies positive samples and captures a substantial portion of all positive samples. In contrast, a model with high precision but low recall accurately predicts positive samples but misses a significant number of them, leading to an increased count of false negatives.
+
+With this in mind, the aim is to find the best score for precision and recall. 
+
+The Precision-Recall curve is as crucial, if not more so, in evaluating the performance of an object detection model. A good object detector maintains high precision and recall even when we change the confidence threshold (the probability that a box contains an instrument). It means that as we find more instruments (recall increases), we shouldn't see a significant drop in precision.
+
+We can also assess the performance of object detectors by calculating the area under the Precision-Recall curve, known as `AUC` (Area Under the Curve). `AP` (Average Precision) is another helpful metric for comparing different detectors. `AP` is a number that tells us how well a detector performs. In practical terms, `AP` is the average precision calculated for all possible recall values ranging from 0 to 1. It helps us compare detectors more easily because `AP` provides a single numerical measure of performance.
+
+To fully understand the importance of Precision-Recall and `AP` we would use [rafaelpadilla](https://github.com/rafaelpadilla) repo [Object-Detection-Metrics](https://github.com/rafaelpadilla/Object-Detection-Metrics) which provides an excellent example. 
+
+Considering this detection : 
+
+<p align="center">  <img src='rpadilla1.png' align="center" height="300px"> </p>
+
+There are 7 images with 15 ground truth objects represented by the green bounding boxes and 24 detected objects represented by the red bounding boxes. Each object is detected with a certain level of confidence and assigned a letter from A to Y. 
+
+To make this clearer, we provide a table with the detection identifier letter and confidence level for each image. The last column tells you whether the detection is `FP` or `TP`, depending on the conditions mentioned above (here the `IOU` threshold is 0.3).
+
+
+<p align="center">  <img src='rpadilla2.png' align="center" height="550px"> </p>
+
+The Precision-Recall curve is created by calculating precision and recall values based on the accumulated True Positives `TP and False Positives (FP) detections. To do this, we start by arranging the detections in order of their confidence scores. Then, we compute precision and recall for each step as we accumulate detections with the formula above, as demonstrated in the table below :
+
+
+<p align="center">  <img src='rpadilla3.png' align="center" height="550px"> </p>
 

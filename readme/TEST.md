@@ -126,7 +126,9 @@ With this in mind, the aim is to find the best score for precision and recall.
 
 The Precision-Recall curve is as crucial, if not more so, in evaluating the performance of an object detection model. A good object detector maintains high precision and recall even when we change the confidence threshold (the probability that a box contains an instrument). It means that as we find more instruments (recall increases), we shouldn't see a significant drop in precision.
 
-We can also assess the performance of object detectors by calculating the area under the Precision-Recall curve, known as `AUC` (Area Under the Curve). `AP` (Average Precision) is another helpful metric for comparing different detectors. `AP` is a number that tells us how well a detector performs. In practical terms, `AP` is the average precision calculated for all possible recall values ranging from 0 to 1. It helps us compare detectors more easily because `AP` provides a single numerical measure of performance.
+We can also assess the performance of object detectors by calculating the area under the Precision-Recall curve `p`, known as `AUC` (Area Under the Curve). `AP` (Average Precision) is another helpful metric for comparing different detectors. `AP` is a number that tells us how well a detector performs. In practical terms, `AP` is the average precision calculated for all possible recall values ranging from 0 to 1. It helps us compare detectors more easily because `AP` provides a single numerical measure of performance.
+
+$$ AP = \int_{0}^{1} p(r) dr $$
 
 To fully understand the importance of Precision-Recall and `AP` we would use [rafaelpadilla](https://github.com/rafaelpadilla) repo [Object-Detection-Metrics](https://github.com/rafaelpadilla/Object-Detection-Metrics) which provides an excellent example. 
 
@@ -141,8 +143,16 @@ To make this clearer, we provide a table with the detection identifier letter an
 
 <p align="center">  <img src='rpadilla2.png' align="center" height="550px"> </p>
 
-The Precision-Recall curve is created by calculating precision and recall values based on the accumulated True Positives `TP and False Positives (FP) detections. To do this, we start by arranging the detections in order of their confidence scores. Then, we compute precision and recall for each step as we accumulate detections with the formula above, as demonstrated in the table below :
+The Precision-Recall curve is created by calculating precision and recall values based on the accumulated True Positives `TP and False Positives (FP) detections. To do this, we start by arranging the detections in order of their confidence scores. Then, we compute precision and recall for each step as we accumulate detections with the formula above, as demonstrated in the table below. Note that for recall computation, the denominator term ("Acc TP + Acc FN" or "All ground truths") is constant at 15 since hand-labelled boxes are constant irrespective of detections:
 
 
 <p align="center">  <img src='rpadilla3.png' align="center" height="550px"> </p>
+
+
+Example : for the 6th line (image 1), Precision = TP/(TP+FP) = 2/(2+4) = 1/3 and Recall = TP/(TP+FN) = (2/15) = 0.133333
+
+When we plot the Precision values with the Recall values we obtain the Precision-Recall curve as follow :
+
+<p align="center">  <img src='rpadilla4.png' align="center" height="350px"> </p>
+
 

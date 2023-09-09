@@ -187,7 +187,7 @@ Now that we've understood how the average precision `AP` is calculated, we can t
 
 Let's have a look at the object detection COCO evaluation metric :
 
-<p align="center">  <img src='coco_metrics.png' align="center" height="270px"> <img src='dernier_screen.png' align="center" height="270px"> </p>
+<p align="center">  <img src='COCO_metrics_results.png' align="center" height="290px">  </p>
 
 #### Average Precision (AP) :
 

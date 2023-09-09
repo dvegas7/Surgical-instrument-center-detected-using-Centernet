@@ -8,7 +8,7 @@
 
 ## Instrument detection
 
-| Model                    | GPUs | Epoch | Test time on CPU |   AP               |  Download | 
+| Model                    | GPUs | Epoch | Test time on CPU |   Average Precision (AP)               |  Download | 
 |--------------------------|------|-------|----------------|--------------------|-----------|
 |model_1|1|45|7m 49s|73|[model](https://drive.google.com/file/d/1vFO-rkP_VungmU2A_mQ9oWsy0OncjK4m/view?usp=drive_link)|
 |model_2|1|55|7m 51s|70|[model](https://drive.google.com/file/d/1PydVi1IreS2AbU5uAIuzU9YY9avz7OfC/view?usp=drive_link)|

@@ -25,12 +25,12 @@ All the installation instructions can be found in [INSTALLATION.md](readme/INSTA
 
 Images and videos are supported for demo. 
 
-First, download the [models](readme/MODEL.md) and put them in `CenterNet_ROOT/models/` (model_best_final by default)
+First, download the [models](readme/MODEL.md) and put them in `CenterNet_ROOT/models/` (model_1 by default)
 
 For object detection on images/ video, go to `CenterNet_ROOT/src/` and run :
 
 ~~~
-python demo.py ctdet --demo /path/to/image/or/folder/or/video --load_model ../models/model_best_final.pth
+python demo.py ctdet --demo /path/to/image/or/folder/or/video --load_model ../models/model_1.pth
 ~~~
 
 You can find example images in `CenterNet_ROOT/images/`
@@ -38,7 +38,7 @@ You can find example images in `CenterNet_ROOT/images/`
 Example:
 
 ~~~
-python demo.py ctdet --demo ../images/instrument1.jpg --load_model ../models/model_best_final.pth
+python demo.py ctdet --demo ../images/instrument1.jpg --load_model ../models/model_1.pth
 ~~~
 
 If set up correctly, the output with the above command should look like this :
@@ -48,7 +48,7 @@ If set up correctly, the output with the above command should look like this :
 Add --debug 2 to the previous command to visualize the heatmap output.
 
 ~~~
-python demo.py ctdet --demo ../images/instrument2.jpg --load_model ../models/model_best_final.pth --debug 2
+python demo.py ctdet --demo ../images/instrument2.jpg --load_model ../models/model_1.pth --debug 2
 ~~~
 
 Output should look like this :
@@ -57,7 +57,7 @@ Output should look like this :
 If you want to have the coordinates (x,y) of the instruments centers add --debug 5 and the coordinates will be written in `CenterNet_ROOT/src/coordinates.txt`
 
 ~~~
-python demo.py ctdet --demo ../images/instrument2.jpg --load_model ../models/model_best_final.pth --debug 5
+python demo.py ctdet --demo ../images/instrument2.jpg --load_model ../models/model_1.pth --debug 5
 
 ~~~
 ## Training on your own dataset

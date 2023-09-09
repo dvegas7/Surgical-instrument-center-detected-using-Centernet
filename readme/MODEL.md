@@ -3,6 +3,7 @@
 ### Notes
 - The experiments ran with pytorch 1.2.0, CUDA 10.0, and CUDNN 7.6.3
 - All the models can be downloaded with the link
+- You can click on the models to get their results on the test data. 
 - If you want more details about model average precision and how the model is evaluated in general check [TEST.md](TEST.md)
 
 

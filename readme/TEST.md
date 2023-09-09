@@ -217,7 +217,7 @@ Note that for each line of our results `maxDets` limits the number of detections
 
 #### Average Recall (AR) :
 
-The computation of the mean Average Recall `AR` shares similarities with the mean Average Precision `AP`, but it focuses on a different aspect of model performance. Instead of analyzing precision vs recall, we analyze the recall behavior using different `IoU` thresholds. `AR` is the recall averaged over all $ IoU \in \{0.5,\ldots, 1\} $
+The computation of the mean Average Recall `AR` shares similarities with the mean Average Precision `AP`, but it focuses on a different aspect of model performance. Instead of analyzing precision vs recall, we analyze the recall behavior using different `IoU` thresholds. `AR` is the recall averaged over all `IOU` of 0.5 to 1.
 
 and can be computed as two times the area under the recall-IoU curve:
 

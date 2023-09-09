@@ -56,6 +56,8 @@
 
     <p align="center">  <img src='dernier_screen.png' align="center" height="400px"> </p>
 
+    It also generates a `result.json`file in COCO format in `CenterNet_ROOT/exp/ctdet/coco_dla` which lists the score of each detection for each image in the test dataset, as well as the coordinates of the associated bounding boxes. 
+
     To understand the test results and how they are calculated please refer to [Results](#results)
 
 ## Results 
@@ -187,7 +189,7 @@ Now that we've understood how the average precision `AP` is calculated, we can t
 
 Let's have a look at the object detection COCO evaluation metric :
 
-<p align="center">  <img src='coco_metrics.png' align="center" height="270px"> </p>
+<p align="center">  <img src='coco_metrics.png' align="center" height="270px"> <img src='dernier_screen.png' align="center" height="270px"> </p>
 
 #### Average Precision (AP) :
 
@@ -207,6 +209,36 @@ We can see 3 lines for the average precision :
 
     AP[IOU=.75] is similar to AP[IOU=.50] but uses a stricter IoU threshold of 0.75. This metric evaluates object detection performance based on higher overlap requirements between predicted and ground truth bounding boxes. It measures the precision of highly accurate object localization.
 
+
+
+Note that for each line of our results `maxDets` limits the number of detections our model can make for each image. For average precision we have `maxDets = 100`
+
 #### AP Across Scales:
 
 `AP` across three scales can be quite helpful. As written, this calculates the `AP` according to the size of the object to be detected. For example, if your task involves finding many small objects, you'd want to make sure you do well in detecting those. But in our case it's not very interesting as the size of the instruments is quite large in relation to the image, which explains the `-1.000` result we obtained for the small surfaces. Because we don't have small detection to do. 
+
+#### Average Recall (AR) :
+
+The computation of the mean Average Recall `AR` shares similarities with the mean Average Precision `AP`, but it focuses on a different aspect of model performance. Instead of analyzing precision vs recall, we analyze the recall behavior using different `IoU` thresholds. `AR` is the recall averaged over all $ IoU \in \{0.5,\ldots, 1\} $
+
+and can be computed as two times the area under the recall-IoU curve:
+
+$$ AR = 2\int_{0.5}^{1} recall(o) do $$
+
+Here we have 3 lines where the `maxDets` takes the values `1`, `10`, `100` which limits the number of detections. 
+
+Adjusting the value of `maxDets` when calculating Average Recall is an important decision to control the sensitivity of the metric to multiple detections of the same object. This relates to how multiple detections are handled in `AR` calculation and the impact it can have on the evaluation of the object detection algorithm's performance.
+
+
+#### AR Across Scales :
+
+Same as [AP across scales](#average-recall-ar) but with the Average Recall. 
+
+### Note 
+
+Here we've only talked about `AP` because we only have one class that we want to detect: instruments. If you have several classes, we're talking about Mean Average precision `mAP` and Mean average recall `mAR`.
+
+We can calculate the `mAP` (and `mAR`) by simply taking the mean over all the class `APs` (and `ARs`). For example if we have 5 classes, we can compute an `AP` for each of the 5 categories and then average over all the 5 `AP` classes to get the mean average precision.
+
+This calculation is automatically done when you run `test.py` and the result will be the `mAP` even if it is written `AP`. 
+

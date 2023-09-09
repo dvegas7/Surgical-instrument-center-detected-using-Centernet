@@ -156,3 +156,57 @@ When we plot the Precision values with the Recall values we obtain the Precision
 <p align="center">  <img src='rpadilla4.png' align="center" height="350px"> </p>
 
 
+We now use the 11-point interpolation method in the context of evaluating and visualizing the performance of object detection models, the concept of "11 Points of Interpolation" plays a pivotal role. These 11 specific points along the Precision-Recall curve allow us to gain a deeper understanding of how our model performs at various levels of precision and recall, ranging from 0 to 1 with increments of 0.1. The other method consists of calculating the interpolation performed in all points but it will not be detailed here 
+
+
+
+These interpolation points provide a detailed assessment of the model's performance at different recall levels, offering valuable insights for evaluation and optimization. By connecting these points, we can visualize the Precision-Recall curve and calculate metrics like Average Precision (AP) to summarize the model's overall quality.
+
+The interpolated precision values are obtained by taking the maximum precision whose recall value is greater than its current recall value as follows:
+
+<p align="center">  <img src='11-pointInterpolation.png' align="center" height="350px"> </p>
+
+we calculate the `AP` with the following formula :
+
+$$ AP = \frac{1}{11}\sum_{\tilde{r} \in \{0, 0.1,  \ldots, 1\}} p(\tilde{r}) $$
+
+
+
+where $ p(\tilde{r})$ is the measured precision at recall $\tilde{r}$ with $  \tilde{r} \in \{0, 0.1,  \ldots, 1\} $
+
+Then we have :
+
+$ AP= \frac{1}{11} (1 + 0.6666 + 0.4285 +0.4285 +0.4285 + 0 + 0 + 0)$
+
+$ AP= 26.84 \% $
+
+
+### The COCO Evaluator
+
+Now that we've understood how the average precision `AP` is calculated, we can take a look at the COCO evaluator used to evaluate the model in our case. It is widely used to evaluate object detection models. 
+
+Let's have a look at the object detection COCO evaluation metric :
+
+<p align="center">  <img src='coco_metrics.png' align="center" height="270px"> </p>
+
+#### Average Precision (AP) :
+
+We can see 3 lines for the average precision :
+
+1. AP:
+
+    Using just one `IoU` threshold to evaluate our detection model may not be ideal because it can introduce bias and be too forgiving. To address this, the COCO evaluator takes a more comprehensive approach. It calculates the Average Precision (AP) over a range of 10 `IoU` thresholds, starting at 0.5 and going up to 0.95, with small steps of 0.05 in between and makes the average.
+
+    This method ensures that our evaluation isn't overly strict or lenient. It assesses how well the model's detected bounding boxes align with the actual objects at various levels of overlap. In essence, it gives us a well-rounded view of how accurately our model can locate objects in different scenarios.
+
+2. AP[IOU=.50]:
+
+    This metric focuses on a specific IoU threshold of 0.5 like we see above. It calculates the Average Precision when a predicted bounding box and a ground truth bounding box have at least a 50% overlap. This threshold is commonly used to assess object detection tasks and is a measure of how well objects are localized.
+
+3. AP[IOU=.75]:
+
+    AP[IOU=.75] is similar to AP[IOU=.50] but uses a stricter IoU threshold of 0.75. This metric evaluates object detection performance based on higher overlap requirements between predicted and ground truth bounding boxes. It measures the precision of highly accurate object localization.
+
+#### AP Across Scales:
+
+`AP` across three scales can be quite helpful. As written, this calculates the `AP` according to the size of the object to be detected. For example, if your task involves finding many small objects, you'd want to make sure you do well in detecting those. But in our case it's not very interesting as the size of the instruments is quite large in relation to the image, which explains the `-1.000` result we obtained for the small surfaces. Because we don't have small detection to do. 

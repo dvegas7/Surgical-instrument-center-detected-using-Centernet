@@ -168,13 +168,15 @@ The interpolated precision values are obtained by taking the maximum precision w
 
 <p align="center">  <img src='11-pointInterpolation.png' align="center" height="350px"> </p>
 
-we calculate the `AP` with the following formula :
+We calculate the `AP` with the following formula :
 
 $$ AP = \frac{1}{11}\sum_{\tilde{r} \in \{0, 0.1,  \ldots, 1\}} p(\tilde{r}) $$
 
 
 
-where $ p(\tilde{r})$ is the measured precision at recall $\tilde{r}$ with $  \tilde{r} \in \{0, 0.1,  \ldots, 1\} $
+Where $ p(\tilde{r})$ is the measured precision at recall $\tilde{r}$ with $  \tilde{r} \in \{0, 0.1,  \ldots, 1\} $
+
+<p align="left">  <img src='calc_AP.png' align="center" height="140px"> </p>
 
 Then we have :
 

@@ -174,15 +174,11 @@ $$ AP = \frac{1}{11}\sum_{\tilde{r} \in \{0, 0.1,  \ldots, 1\}} p(\tilde{r}) $$
 
 
 
-Where $ p(\tilde{r})$ is the measured precision at recall $\tilde{r}$ with $  \tilde{r} \in \{0, 0.1,  \ldots, 1\} $
 
-<p align="left">  <img src='calc_AP.png' align="center" height="140px"> </p>
 
-Then we have :
+<p align="left">  <img src='calc_AP.png' align="center" height="150px"> </p>
 
-$ AP= \frac{1}{11} (1 + 0.6666 + 0.4285 +0.4285 +0.4285 + 0 + 0 + 0)$
 
-$ AP= 26.84 \% $
 
 
 ### The COCO Evaluator
